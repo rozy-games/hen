@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.manifest">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rozy Games - PS4 HEN</title>
+  <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BACKGROUND */
+body {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.82),
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.65)
+        ),
+        url("background.jpg") center center / cover no-repeat;
+    color: white;
+}
+
+/* AREA UTAMA */
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+/* NAMA ROZY GAMES */
+.logo {
+    font-size: 82px;
+    font-weight: 900;
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 4px 10px rgba(0,0,0,0.9),
+        0 0 25px rgba(255,255,255,0.25);
+
+    margin-bottom: 10px;
+}
+
+/* SUBTITLE */
+.subtitle {
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+
+    text-shadow: 0 3px 8px black;
+}
+
+/* TOMBOL HEN */
+.hen-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 430px;
+    height: 90px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.8);
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.5);
+
+    transition: 0.2s;
+}
+
+.hen-button:hover {
+    transform: scale(1.04);
+    background: rgba(255,255,255,0.25);
+}
+
+/* INFO */
+.info {
+    margin-top: 30px;
+
+    font-size: 20px;
+    line-height: 1.7;
+
+    text-shadow: 0 3px 8px black;
+}
+
+/* WHATSAPP */
+.wa {
+    margin-top: 22px;
+
+    font-size: 21px;
+    font-weight: bold;
+
+    text-shadow: 0 3px 8px black;
+}
+
+/* FOOTER */
+.footer {
+    position: absolute;
+    bottom: 25px;
+
+    width: 100%;
+    text-align: center;
+
+    font-size: 17px;
+    color: rgba(255,255,255,0.85);
+
+    text-shadow: 0 2px 6px black;
+
+}
+hr {
+    border: 0;
+    border-top: 1px solid #333333;
+    margin: 15px auto;
+    width: 90%;
+}
+
+.btn-container {
+    margin: 20px 0 30px 0;
+}
+
+button {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 12px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:disabled, button:hover:disabled {
+    background: #0b2253;
+    cursor: default;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.main-layout {
+    width: 96%;
+    margin: 0 auto;
+}
+
+.media-box {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+.media-box img {
+    width: 90%;
+    height: auto;
+    border: 1px solid #222222;
+}
+
+#console {
+    float: right;
+    width: 70%;
+    background: #000000;
+    color: #00ff00;
+    font-size: 14px;
+    padding: 15px;
+    text-align: left;
+    height: 290px;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    border: 1px solid #222222;
+}
+
+#kernel-options {
+    margin-bottom: 1rem;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #555;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background-color: #00ff00;
+}
+
+.mt-2{
+    margin-top: 2rem;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        ROZY GAMES
+    </div>
+	<div class="subtitle">
+        <h3 id="UA">Running on:</h3>
+    </div>
+
+  <hr>
+
+  <div class="btn-container">
+    <form id="kernel-options">
+      <input type="radio" name="kernel" id="netctrl-exploit" value="netctrl">
+      <label for="netctrl-exploit">NetCtrl</label>
+      <input type="radio" name="kernel" id="lapse-exploit" value="lapse">
+      <label for="lapse-exploit">Lapse</label>
+    </form>
+    <button id="jeilbrek">AKTIFKAN HEN</button>
+    <div class="autoJb">
+      <label for="autoJbInput" id="autoJbLabel">AUTO AKTIFKAN HEN</label>
+      <input class="mt-2" id="autoJbInput" type="checkbox">
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div class="media-box">
+      <img src="includes/cat.jpg" alt="A cat staring at you">
+    </div>
+
+    <pre id="console">Siap. Menunggu eksekusi...
+  </pre>
+
+
+  </div>
+
+  <script src="src/main.js"></script>
+  <script src="includes/script.js"></script>
+  <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</div>
+
+<div class="footer">
+    PS4 HEN Support 5.05 – 13.00<br> Game Terupdate • Service • Isi Game<br> ROZY GAMES • KOTA SOLOK<br> WhatsApp: 0812 7063 5111PS4 HEN Support 5.05 – 13.00</br>
+</body>
+
+</html>
